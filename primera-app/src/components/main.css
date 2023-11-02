@@ -1,0 +1,21 @@
+main{
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card{
+  padding: 1rem;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+div img {
+  width: 200px;
+}
