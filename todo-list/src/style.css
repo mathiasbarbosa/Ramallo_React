@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --color-1: #040d12ee;
+  --color-2: #93B1A6;
+  --color-3: #5C8374;
+}
+
+body{
+  
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-2);
+}
+
+#root{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+form{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+form > input {
+  padding: 0.5rem;
+  width: 50%;
+  
+}
