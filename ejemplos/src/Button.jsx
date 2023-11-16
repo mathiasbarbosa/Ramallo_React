@@ -1,17 +1,15 @@
-import { useState } from "react";
+import React from 'react';
 
-export default function Button(props){
+const Button = ({ children, onClick}) => {
 
-  // const [contador, setContador] = useState(0)
-  // function handleClick(){
-  //   console.log('hiciste click');
-  //   // contador = contador + 1
-  //   // console.log(contador);
-  //   setContador(contador + 1)
-  // }
+  function handleClick(){
+    alert('Hiciste click')
+  }
 
-  return(
-    <button onClick={() => props.onClickSetContador()} >Incrementar contador {props.contador}</button>
-  )
-
+  return (
+    // <button onClick={handleClick} >No hace nada </button>
+    <button onClick={onClick} > {children} </button>
+  );
 }
+
+export default Button;
