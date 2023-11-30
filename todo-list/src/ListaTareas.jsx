@@ -1,10 +1,13 @@
+import { useContext } from 'react'
 import TareaItem from './TareaItem'
+import { TaskContext } from './TaskContext'
 
-const ListaTareas = ({ tareas, borrarItem, marcarCompleta }) => {
+const ListaTareas = () => {
+  const tareas = useContext(TaskContext)
   return (
     <ul>
       {
-        tareas.map(tarea => <TareaItem key={tarea.id} tarea={tarea} borrarItem={borrarItem} marcarCompleta={marcarCompleta} />)
+        tareas.map(tarea => <TareaItem key={tarea.id} task={tarea} />)
       }
     </ul>
   )

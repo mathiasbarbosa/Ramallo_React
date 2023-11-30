@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { TaskDispatch } from './TaskContext'
 
-const TareaItem = ({ tarea, borrarItem, marcarCompleta }) => {
-  const { titulo, completa, id } = tarea
-  const [isCompleted, setIsCompleted] = React.useState(completa)
+const TareaItem = ({ task }) => {
+  const { tarea, completa, id } = task
+  const [isCompleted, setIsCompleted] = useState(false)
+  const dispatch = useContext(TaskDispatch)
 
-  const handleClick = () => {
-    marcarCompleta(id)
-    setIsCompleted(!isCompleted)
+  const borrarItem = (id) => {
+    dispatch({
+      type: 'borrar',
+      id
+    })
+  }
+
+  const marcarCompleta = (id) => {
+    dispatch({
+      type: 'completada',
+      id
+    })
+    // setIsCompleted(true)
+    setIsCompleted(prev => !prev)
   }
 
   return (
     <li style={{ textDecoration: isCompleted ? 'line-through' : '' }}>
-      <strong>{titulo} - {completa}</strong>
+      <strong>{tarea} - {completa}</strong>
       <button onClick={() => borrarItem(id)}>Eliminar</button>
-      <button onClick={handleClick}>Marcar como completada</button>
+      <button onClick={marcarCompleta}>Marcar como completada</button>
     </li>
   )
 }
